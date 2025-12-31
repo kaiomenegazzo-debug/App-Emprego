@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrampoJá - Kaio Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --bg: #f1f5f9; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); margin: 0; padding-bottom: 50px; }
+        header { background: var(--primary); color: white; padding: 30px 20px; text-align: center; }
+        .container { max-width: 500px; margin: -20px auto 0; padding: 0 15px; }
+        .search-box { width: 100%; padding: 15px; border-radius: 10px; border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 16px; outline: none; }
+        .vagas-lista { margin-top: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .titulo { font-weight: 600; color: #1e293b; font-size: 1.1rem; }
+        .local { color: #64748b; font-size: 0.9rem; margin: 5px 0 15px; }
+        .btn { background: var(--primary); color: white; border: none; padding: 10px; width: 100%; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .btn:hover { background: #1d4ed8; }
+        .hidden { display: none; } /* Classe para esconder vagas na busca */
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TrampoJá 🚀</h1>
+    <p>As melhores vagas na palma da sua mão</p>
+</header>
+
+<div class="container">
+    <input type="text" id="busca" class="search-box" placeholder="Digite o cargo que procura..." onkeyup="filtrarVagas()">
+
+    <div class="vagas-lista" id="lista">
+        <div class="card">
+            <div class="titulo">Auxiliar de Serviços Gerais</div>
+            <div class="local">📍 São Paulo - SP</div>
+            <button class="btn" onclick="candidatar('Auxiliar')">Candidatar-se</button>
+        </div>
+
+        <div class="card">
+            <div class="titulo">Vendedor Interno</div>
+            <div class="local">📍 Rio de Janeiro - RJ</div>
+            <button class="btn" onclick="candidatar('Vendedor')">Candidatar-se</button>
+        </div>
+
+        <div class="card">
+            <div class="titulo">Ajudante de Carga</div>
+            <div class="local">📍 Curitiba - PR</div>
+            <button class="btn" onclick="candidatar('Ajudante')">Candidatar-se</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Função para filtrar as vagas em tempo real
+    function filtrarVagas() {
+        let input = document.getElementById('busca').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let titulo = cards[i].getElementsByClassName('titulo')[0].innerText.toLowerCase();
+            if (titulo.includes(input)) {
+                cards[i].classList.remove('hidden');
+            } else {
+                cards[i].classList.add('hidden');
+            }
+        }
+    }
+
+    // Função para simular candidatura
+    function candidatar(vaga) {
+        let nome = prompt("Qual seu nome completo?");
+        if(nome) {
+            alert("Parabéns " + nome + "! Seu interesse na vaga de " + vaga + " foi enviado com sucesso.");
+        }
+    }
+</script>
+
+</body>
+</html>
