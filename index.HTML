@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrampoJá - Encontre sua Vaga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .vaga-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .vaga-card:active {
+            transform: scale(0.98);
+        }
+
+        .vaga-titulo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            color: var(--primary);
+        }
+
+        .vaga-empresa {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .btn-candidatar {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TrampoJá</h1>
+        <p>A vaga que você busca está aqui</p>
+    </header>
+
+    <div class="container">
+        <input type="text" class="search-box" placeholder="🔎 Buscar cargo ou cidade...">
+
+        <div class="vaga-card">
+            <div class="vaga-titulo">Auxiliar de Serviços Gerais</div>
+            <div class="vaga-empresa">📍 LimpaTudo Ltda - São Paulo/SP</div>
+            <a href="#" class="btn-candidatar" onclick="alert('Currículo enviado com sucesso!')">Candidatar-se</a>
+        </div>
+
+        <div class="vaga-card">
+            <div class="vaga-titulo">Vendedor (a)</div>
+            <div class="vaga-empresa">📍 Loja Moda Fashion - Rio de Janeiro/RJ</div>
+            <a href="#" class="btn-candidatar" onclick="alert('Currículo enviado com sucesso!')">Candidatar-se</a>
+        </div>
+
+        <div class="vaga-card">
+            <div class="vaga-titulo">Ajudante de Obra</div>
+            <div class="vaga-empresa">📍 Construtora Real - Curitiba/PR</div>
+            <a href="#" class="btn-candidatar" onclick="alert('Currículo enviado com sucesso!')">Candidatar-se</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2024 Desenvolvido por Kaio Menegazzo
+    </div>
+
+</body>
+</html>
+          
